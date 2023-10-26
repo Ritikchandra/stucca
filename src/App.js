@@ -22,13 +22,13 @@ function App() {
       photo: sarthak,
     },
     {
-      id: 2,
+      id: 5,
       dept: "Supreeth MK",
       name: "Department of Reception and Accommodation",
       photo: supreeth,
     },
     {
-      id: 3,
+      id: 6,
       dept: "Shaurya Parikh",
       name: "Department of Sponsorship and Marketing",
       photo: shaurya,
@@ -40,15 +40,15 @@ function App() {
       photo: ayush,
     },
     {
-      id: 5,
+      id: 3,
       dept: "Vaibhav Jain",
       name: "Department of Publications and Correspondence",
       photo: vaibhav,
     },
     {
-      id: 6,
+      id: 2,
       dept: "Adarsh Goel",
-      name: "Art, Design and Publicity",
+      name: "Department of Art, Design and Publicity",
       photo: adarsh,
     },
     {
@@ -100,7 +100,47 @@ function App() {
     // Cleanup the timeout to avoid memory leaks
     return () => clearTimeout(timeout);
   }, [activeStuccan]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const assets = [
+      bgImage,
+      logo,
+      leftPumpkin,
+      rightPumpkin,
+      shaurya,
+      supreeth,
+      ayush,
+      sarthak,
+      vaibhav,
+      abhinav,
+      prez,
+      adarsh
+    ];
+
+    const loadAssets = async () => {
+      try {
+        await Promise.all(assets.map((asset) => new Promise((resolve) => {
+          const img = new Image();
+          img.src = asset;
+          img.onload = resolve;
+          img.onerror = resolve; // Handling error case if the image fails to load
+        })));
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error loading assets:", error);
+        setIsLoading(false); // Set isLoading to false to prevent indefinite loading in case of an error
+      }
+    };
+
+    loadAssets();
+  }, []); 
   return <>
+  {isLoading && (
+    <div className="loaderWrapper">
+      Loading...
+    </div>
+  )}
         <div className="pageWrapper">
           <img src={bgImage} alt="" className="bgImage"/>
           <div>
