@@ -1,0 +1,103 @@
+.pageWrapper{
+  height: 100vh ;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* filter:brightness(50%) */
+}
+.bgImage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  filter: brightness(50%);
+}
+.logo{
+  position: absolute;
+  top: 0;
+  left: auto;
+}
+.rightPumpkin{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10vw;
+  height: auto;
+}
+.leftPumpkin{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10vw;
+  height: auto;
+}
+.logo {
+  position: absolute;
+  top: -5%;
+  left: 0;
+  right: 0;
+  margin: 0 auto; /* This centers the element horizontally */
+}
+.mainContent{
+  position: relative;
+  width: 80%;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+}
+.stuccan{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.photo{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.photo>img{
+  width: 70%;
+}
+.text{
+  width: 80%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.deptName{
+  color: white;
+  font-size: 4rem;
+  font-family: 'Mantinia';
+}
+.stuccanName{
+  color: gray;
+  font-size: 3rem;
+  margin-top: 2rem;
+  font-family: 'MetalManiaItalic';
+  font-weight: 100;
+}
+.stuccan {
+  display: flex;
+  opacity: 0 ;
+}
+@font-face {
+  font-family: MetalMania;
+  src: url("../public/Metal\ Mania.ttf");
+}
+@font-face {
+  font-family: MetalManiaItalic;
+  src: url("../public/MetalMania-Regular.ttf");
+}
+@font-face {
+  font-family: Mantinia;
+  src: url("../public/Mantinia\ CC\ Regular.ttf");
+}
